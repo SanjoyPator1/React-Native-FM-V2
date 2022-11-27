@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import ColorBox from './components/ColorBox';
 
 const styles = StyleSheet.create({
   safeArea: {flex: 1},
@@ -31,19 +32,10 @@ const App = () => {
         <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
           Here are some boxes of different colors
         </Text>
-
-        <View style={[styles.smallContainer, {backgroundColor: '#2aa198'}]}>
-          <Text style={styles.smallText}>Cyan: #2aa198</Text>
-        </View>
-        <View style={[styles.smallContainer, {backgroundColor: '#268bd2'}]}>
-          <Text style={styles.smallText}>Blue: #268bd2</Text>
-        </View>
-        <View style={[styles.smallContainer, {backgroundColor: '#d33682'}]}>
-          <Text style={styles.smallText}>Magenta: #d33682</Text>
-        </View>
-        <View style={[styles.smallContainer, {backgroundColor: '#cb4b16'}]}>
-          <Text style={styles.smallText}>Orange: #cb4b16</Text>
-        </View>
+        <ColorBox hexCode="#2aa198" colorName="Cyan" />
+        <ColorBox hexCode="#268bd2" colorName="Blue" />
+        <ColorBox hexCode="#d33682" colorName="Magenta" />
+        <ColorBox hexCode="#cb4b16" colorName="Orange" />
       </View>
     </SafeAreaView>
   );
