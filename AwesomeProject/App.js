@@ -4,6 +4,7 @@ import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
 import AllColorBox from './components/AllColorBox';
 import ColorBox from './components/ColorBox';
 import FlatListComponent from './components/FlatListComponent';
+import ListColor from './components/ListColor';
 import SectionListComponent from './components/SectionListComponent';
 
 const styles = StyleSheet.create({
@@ -34,7 +35,7 @@ const App = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, styles.containerBgColor]}>
         <View style={{width: '100%'}}>
-          <FlatListComponent />
+          <ListColor />
         </View>
       </View>
     </SafeAreaView>
