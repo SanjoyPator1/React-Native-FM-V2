@@ -34,10 +34,7 @@ const App = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, styles.containerBgColor]}>
         <View style={{width: '100%'}}>
-          <View style={{height: '28%'}}>
-            <FlatListComponent />
-          </View>
-          <SectionListComponent />
+          <FlatListComponent />
         </View>
       </View>
     </SafeAreaView>
