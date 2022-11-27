@@ -1,6 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import AllColorBox from './components/AllColorBox';
 import ColorBox from './components/ColorBox';
+import FlatListComponent from './components/FlatListComponent';
+import SectionListComponent from './components/SectionListComponent';
 
 const styles = StyleSheet.create({
   safeArea: {flex: 1},
@@ -29,13 +33,12 @@ const App = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, styles.containerBgColor]}>
-        <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
-          Here are some boxes of different colors
-        </Text>
-        <ColorBox hexCode="#2aa198" colorName="Cyan" />
-        <ColorBox hexCode="#268bd2" colorName="Blue" />
-        <ColorBox hexCode="#d33682" colorName="Magenta" />
-        <ColorBox hexCode="#cb4b16" colorName="Orange" />
+        <View style={{width: '100%'}}>
+          <View style={{height: '28%'}}>
+            <FlatListComponent />
+          </View>
+          <SectionListComponent />
+        </View>
       </View>
     </SafeAreaView>
   );
