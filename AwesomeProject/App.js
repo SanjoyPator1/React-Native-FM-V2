@@ -6,6 +6,11 @@ import ColorBox from './components/ColorBox';
 import FlatListComponent from './components/FlatListComponent';
 import ListColor from './components/ListColor';
 import SectionListComponent from './components/SectionListComponent';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from './screens/Home';
+import ColorPallete from './screens/ColorPallete';
+import TestPage from './screens/TestPage';
 
 const styles = StyleSheet.create({
   safeArea: {flex: 1},
@@ -30,15 +35,19 @@ const styles = StyleSheet.create({
   },
 });
 
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={[styles.container, styles.containerBgColor]}>
-        <View style={{width: '100%'}}>
-          <ListColor />
-        </View>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="TestPage" component={TestPage} />
+        <Stack.Screen name="ColorPallete" component={ColorPallete} />
+        <Stack.Screen name="FlatList" component={FlatListComponent} />
+        <Stack.Screen name="SectionList" component={SectionListComponent} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

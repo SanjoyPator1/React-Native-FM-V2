@@ -38,6 +38,7 @@ const FOODS_DATA = [
   'Doritos22',
   'Eclairs22',
   'Eclairs23',
+  'Eclairs24',
 ];
 
 const FlatListComponent = () => {
@@ -46,17 +47,18 @@ const FlatListComponent = () => {
       // eslint-disable-next-line react-native/no-inline-styles
       style={{padding: 20}}
       data={FOODS_DATA}
-      columnWrapperStyle={{
-        justifyContent: FOODS_DATA % 2 === 1 ? 'flex-start' : 'space-between',
-      }}
+      // columnWrapperStyle={{
+      //   justifyContent:
+      //     FOODS_DATA.length % 3 == 2 ? 'flex-start' : 'space-between',
+      // }}
       keyExtractor={item => item}
       renderItem={({item}) => <Food name={item} />}
       ItemSeparatorComponent={<Text>item separator</Text>}
       ListEmptyComponent={<Text>List is empty</Text>}
-      ListFooterComponent={<Text>List Footer component</Text>}
       ListHeaderComponent={<Text>List Header component</Text>}
+      ListFooterComponent={<Text>List Footer component</Text>}
       horizontal={false}
-      numColumns={2}
+      // numColumns={3}
     />
   );
 };

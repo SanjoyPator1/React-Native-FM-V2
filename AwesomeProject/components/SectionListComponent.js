@@ -24,6 +24,7 @@ const SectionListComponent = () => {
       renderSectionHeader={({section}) => (
         <Text style={styles.header}>{section.title}</Text>
       )}
+      ListFooterComponent={<Text>List Footer component</Text>}
     />
   );
 };
