@@ -12,6 +12,10 @@ const Home = ({navigation}) => {
       <TouchableOpacity onPress={() => navigation.navigate('ColorPallete')}>
         <Text>Go to Color Pallete</Text>
       </TouchableOpacity>
+      <Button
+        title="Go to Hooks And Network Requests Page"
+        onPress={() => navigation.navigate('HooksAndNetworkRequests')}
+      />
     </View>
   );
 };

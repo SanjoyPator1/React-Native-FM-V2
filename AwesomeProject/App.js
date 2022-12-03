@@ -12,6 +12,7 @@ import Home from './screens/Home';
 import ColorPallete from './screens/ColorPallete';
 import TestPage from './screens/TestPage';
 import ColorBoxes from './screens/ColorBoxes';
+import HooksAndNetworkRequests from './screens/HooksAndNetworkRequest';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,10 @@ const App = () => {
           name="ColorBoxes"
           component={ColorBoxes}
           options={({route}) => ({title: route.params.paletteName})}
+        />
+        <Stack.Screen
+          name="HooksAndNetworkRequests"
+          component={HooksAndNetworkRequests}
         />
       </Stack.Navigator>
     </NavigationContainer>
