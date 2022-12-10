@@ -9,10 +9,12 @@ import UseEffectPage from './UseEffectPage';
 const HooksAndNetworkRequests = () => {
   return (
     <View style={customStyles.mainContainer}>
-      <Text style={customStyles.pageHeader}>Hooks And Network Requests</Text>
-      <UseStatePage />
-      <UseCallbackPage />
-      <UseEffectPage />
+      <ScrollView>
+        <Text style={customStyles.pageHeader}>Hooks And Network Requests</Text>
+        <UseStatePage />
+        <UseCallbackPage />
+        <UseEffectPage />
+      </ScrollView>
     </View>
   );
 };

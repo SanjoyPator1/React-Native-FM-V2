@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
@@ -13,6 +14,7 @@ import ColorPallete from './screens/ColorPallete';
 import TestPage from './screens/TestPage';
 import ColorBoxes from './screens/ColorBoxes';
 import HooksAndNetworkRequests from './screens/HooksAndNetworkRequest';
+import NetworkRequestRefreshPage from './screens/NetworkRequestRefreshPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +35,10 @@ const App = () => {
         <Stack.Screen
           name="HooksAndNetworkRequests"
           component={HooksAndNetworkRequests}
+        />
+        <Stack.Screen
+          name="NetworkRequestRefreshPage"
+          component={NetworkRequestRefreshPage}
         />
       </Stack.Navigator>
     </NavigationContainer>

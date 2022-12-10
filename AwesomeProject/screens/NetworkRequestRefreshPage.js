@@ -2,11 +2,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
 import React, {useState, useCallback, useEffect} from 'react';
-import {Text, FlatList, StyleSheet, View} from 'react-native';
+import {Text, FlatList, StyleSheet, View, RefreshControl} from 'react-native';
 import commonStyles from './styles';
 
-const UseEffectPage = () => {
+const NetworkRequestRefreshPage = () => {
   const [facts, setFacts] = useState([]);
+
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = useCallback(async () => {
+    setIsRefreshing(true);
+    await handleFetchCatFacts();
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 1000);
+  });
 
   const textStyle = {
     color: 'white',
@@ -34,31 +44,9 @@ const UseEffectPage = () => {
   }, []);
 
   return (
-    <View style={[commonStyles.smallContainer, {height: 500}]}>
-      <Text style={commonStyles.boldHeader}>useEffect</Text>
-      <FlatList
-        nestedScrollEnabled
-        horizontal={true}
-        // contentContainerStyle={{padding: 5}}
-        showsHorizontalScrollIndicator={false}
-        style={[
-          styles.list,
-          {
-            borderColor: 'black',
-            borderWidth: 2,
-            borderRadius: 10,
-            height: 150,
-            paddingHorizontal: 10,
-          },
-        ]}
-        data={facts}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <View style={[styles.box, colorStyle]}>
-            <Text style={[styles.text, textStyle]}>{item.title}</Text>
-          </View>
-        )}
-      />
+    <View style={[commonStyles.smallContainer, {flex: 1}]}>
+      <Text style={commonStyles.boldHeader}>Pull down to refresh</Text>
+
       <FlatList
         nestedScrollEnabled
         style={[
@@ -77,6 +65,8 @@ const UseEffectPage = () => {
             <Text style={[styles.text, textStyle]}>{item.title}</Text>
           </View>
         )}
+        refreshing={isRefreshing}
+        onRefresh={handleRefresh}
       />
     </View>
   );
@@ -105,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UseEffectPage;
+export default NetworkRequestRefreshPage;
